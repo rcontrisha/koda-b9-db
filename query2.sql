@@ -6,7 +6,7 @@ JOIN genres g ON g.id = m.genre_id
 LIMIT 50
 
 -- Soal Nomor 2
-SELECT m.title AS "Movie Title", a.first_name AS "First Name", a.last_name AS "Last Name", ma.role AS "Role"
+SELECT m.title AS "Movie Title", CONCAT(a.first_name, ' ', a.last_name) AS "Actor Name", ma.role AS "Role"
 FROM public.movies_actors ma
 JOIN public.movies m ON m.id = ma.movie_id
 JOIN public.actors a ON a.id = ma.actor_id
